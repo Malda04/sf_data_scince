@@ -1,7 +1,7 @@
 """Game find number
-Компьютер сам загадывает и сам угадыват число"""
+Компьютер сам загадывает и сам угадыват число
+"""
 
-from itertools import count
 import numpy as np
 
 def random_predict(number:int=1) ->int:
@@ -11,7 +11,7 @@ def random_predict(number:int=1) ->int:
         namber (int, optional): Загаданное число. Defaults to 1.
 
     Returns:
-        : Число попыток
+        int: Число попыток
     """
     
     count = 0
@@ -20,7 +20,9 @@ def random_predict(number:int=1) ->int:
         count+=1
         predict_number = np.random.randint(1, 101) # предпологаемое число попыток
         if number == predict_number:
-            break # Выход из цыкла
+            break # Выход из цыкла, т.е. угадали
+        elif number > predict_number:
+            number+=1
     return(count)
 
 def score_game(random_predict) ->int:
