@@ -15,11 +15,18 @@ def random_predict(number:int=1) ->int:
     """
     
     count = 0
-    
+    min_x = 1 # минимаальное рандомное число
+    max_x = 100 # максимальное рандомное число
     while True:
         count+=1
         predict_number = np.random.randint(1, 101) # предпологаемое число попыток
-        if number == predict_number:
+        if predict_number > number:
+            max_x = predict_number - 1
+            predict_number = (max_x + min_x) // 2
+        elif predict_number < number:
+            min_x = predict_number + 1
+            predict_number = (max_x + min_x) // 2
+        else:
             break # Выход из цыкла, т.е. угадали
     return(count)
 
