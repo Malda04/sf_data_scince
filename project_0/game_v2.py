@@ -21,8 +21,6 @@ def random_predict(number:int=1) ->int:
         predict_number = np.random.randint(1, 101) # предпологаемое число попыток
         if number == predict_number:
             break # Выход из цыкла, т.е. угадали
-        elif number > predict_number:
-            number+=1
     return(count)
 
 def score_game(random_predict) ->int:
