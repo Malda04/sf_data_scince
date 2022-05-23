@@ -21,10 +21,8 @@ def random_predict(number:int=1) ->int:
         count+=1
         predict_number = np.random.randint(1, 101) # предпологаемое число попыток
         if predict_number > number:
-            max_x = predict_number - 1
             predict_number = (max_x + min_x) // 2
         elif predict_number < number:
-            min_x = predict_number + 1
             predict_number = (max_x + min_x) // 2
         else:
             break # Выход из цыкла, т.е. угадали
