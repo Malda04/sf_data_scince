@@ -13,19 +13,24 @@ def random_predict(number:int=1) ->int:
     Returns:
         int: Число попыток
     """
-    
+    random_predict = np.random.randint(1, 101)
     count = 0
-    min_x = 1 # минимаальное рандомное число
-    max_x = 100 # максимальное рандомное число
+    print("Загадано число от 1 до 100")
+    min = 0
+    max = 100
     while True:
-        count+=1
-        predict_number = np.random.randint(1, 101) # предпологаемое число попыток
-        if predict_number > number:
-            predict_number = (max_x + min_x) // 2
-        elif predict_number < number:
-            predict_number = (max_x + min_x) // 2
-        else:
-            break # Выход из цыкла, т.е. угадали
+        predict = round((min+max)/2)
+        #predict = int(input())
+        count += 1
+        if number == predict:
+            break # Угадали число
+        elif number > predict:
+            min = predict
+            print(f'Алгоритм рекомендует вам число:{round((max + min) / 2)}')
+        elif number < predict:
+            max = predict
+            print(f'Алгоритм рекомендует вам число:{round((max+min)/2)}')
+
     return(count)
 
 def score_game(random_predict) ->int:
