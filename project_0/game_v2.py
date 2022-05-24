@@ -19,7 +19,6 @@ def random_predict(number:int=1) ->int:
     max = 100
     while True:
         predict = round((min+max)/2)
-        #predict = int(input())
         count += 1
         if number == predict:
             break # Угадали число
