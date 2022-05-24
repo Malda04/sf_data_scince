@@ -15,7 +15,6 @@ def random_predict(number:int=1) ->int:
     """
     random_predict = np.random.randint(1, 101)
     count = 0
-    print("Загадано число от 1 до 100")
     min = 0
     max = 100
     while True:
@@ -26,10 +25,10 @@ def random_predict(number:int=1) ->int:
             break # Угадали число
         elif number > predict:
             min = predict
-            print(f'Алгоритм рекомендует вам число:{round((max + min) / 2)}')
+            predict = round((max + min) / 2)
         elif number < predict:
             max = predict
-            print(f'Алгоритм рекомендует вам число:{round((max+min)/2)}')
+            predict = round((max + min) / 2)
 
     return(count)
 
