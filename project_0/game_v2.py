@@ -15,13 +15,13 @@ def random_predict(number:int=1) ->int:
     """
     random_predict = np.random.randint(1, 101)
     count = 0
-    min = 0
+    min = 0 
     max = 100
     while True:
         predict = round((min+max)/2)
         count += 1
         if number == predict:
-            break # Угадали число
+            break 
         elif number > predict:
             min = predict
             predict = round((max + min) / 2)
