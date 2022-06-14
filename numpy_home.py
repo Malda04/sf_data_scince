@@ -13,3 +13,6 @@ a = np.int8(-456)
 
 arr = np.array([1,5,2,9,10])
 print(arr.dtype) # int32
+
+arr = np.linspace(-6, 21, 60, retstep=True, endpoint=False)
+print(arr)
